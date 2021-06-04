@@ -1,6 +1,6 @@
 # Declaring Variables
-variable "rdspasswd" {}
-variable "rdsusername" {}
+#variable "rdspasswd" {}
+#variable "rdsusername" {}
 # variable "rdsdbname" {}
 # Logging into AWS using IAM role
 provider "aws" {

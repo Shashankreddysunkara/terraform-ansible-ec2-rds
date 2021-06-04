@@ -2,13 +2,15 @@
 - name: "Creating 1 VM and some python libaries"
   hosts: localhost
   gather_facts: false
+  become: yes
+  #become_user: sudo
   vars_files:
         - vault.yml
   tasks:
       - name: "installing boto"
         pip:
            name: "boto"
-           executable: pip3
+           executable: pip
 
       - name: "installing boto3"
         pip:
@@ -44,7 +46,7 @@
       - name: "Creating Wordpress Instance"
         ec2:
                 count: 1
-                image: "ami-02e0991c440497357"
+                image: "ami-00f654d297eee2abd"
                 instance_type: t2.micro
                 region: "eu-central-1"
                 wait: yes

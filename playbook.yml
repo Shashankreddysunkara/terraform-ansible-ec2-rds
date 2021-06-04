@@ -1,6 +1,6 @@
 ---
 - name: Deploying HTTPD Servers 
-  hosts: Web_Server_1
+  hosts: tag_Name_wordpress
   vars_files:
           - vars.yml
   tasks:
@@ -22,7 +22,7 @@
                
        - name: Extracting Wordpress Package
          unarchive:
-                src: "/root/wordpress-5.7.tar.gz"
+                src: "/root/wordpress-5.7.2.tar.gz"
                 dest: "/root/"
                 remote_src: yes
 
